@@ -4,7 +4,12 @@
       <!-- Note: there's no method='post' - because not sending the form object to a backend-server -->
       <!-- instead will be using Angular "Forms" module -->
       <!-- Angular will automatically detects the <form> HTML tag in the HTML template -->
-      <form>
+      <!-- this is the built-in even that's fired as part of the angular FormsModule -->
+      <!-- tip: use #template-references with <form> tags -->
+      <!-- note: ngForm is a reserved word for Angular forms -->
+      <!-- thus - instead of getting the template reference -->
+      <!-- you're setting the template reference equal to the ngForm object exposed via the FormsModule -->
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
