@@ -13,6 +13,6 @@ export class AppComponent {
 
   // this angular helper f(x) gets triggered everytime on Submit
   onSubmit(form: NgForm) {
-    console.log('=> Logging the event fired', form);
+    console.log('=> Logging the NgForm newly created object', form);
   }
 }
