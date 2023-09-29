@@ -20,7 +20,9 @@
             <!-- it's dirty if the Form data has been updated/changed -->
             <!-- 'touched' property is used if there's been a click into the object property -->
             <!-- angular's form 'pristine' property is only used for if something was TYPED into the field -->
+            <!-- Check the chrome dev tools elements tab and notice that Angular automatically adds angular built-in classes like 'ng-touched' and 'ng-invalid' under the hood! -->
             <input
+              required
               name="username"
               ngModel
               type="text"
@@ -33,7 +35,10 @@
           </button>
           <div class="form-group">
             <label for="email">Mail</label>
+            <!-- Note: Angulra has built-in angular directive 'email' attribute that's NgForm validator -->
             <input
+              email
+              required
               name="thisIsInputEmail"
               ngModel
               type="email"
