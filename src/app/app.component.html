@@ -9,7 +9,7 @@
       <!-- note: ngForm is a reserved word for Angular forms -->
       <!-- thus - instead of getting the template reference -->
       <!-- you're setting the template reference equal to the ngForm object exposed via the FormsModule -->
-      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
