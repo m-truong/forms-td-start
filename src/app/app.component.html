@@ -16,9 +16,11 @@
             <!-- Requires adding ngModel to ensure angular 'under-the-hood' detects that this <input> html tag is this current forms' control object -->
             <!-- note: ngModel is part of a greater FormsModule from angular -->
             <!-- note: this requires the DOM 'name' attribute which gives the Angular FormsModule a name for this 'forms-object' -->
+            <!-- there's valid property -->
+            <!-- it's dirty if the Form data has been updated/changed -->
             <input
-              ngModel
               name="username"
+              ngModel
               type="text"
               id="username"
               class="form-control"
@@ -30,8 +32,8 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <input
-              ngModel
               name="thisIsInputEmail"
+              ngModel
               type="email"
               id="email"
               class="form-control"
