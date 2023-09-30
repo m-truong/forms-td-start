@@ -1,3 +1,8 @@
 .container {
   margin-top: 30px;
 }
+
+/* Conditionally add the ng-invalid to the borders of the entirerty of the form groups */
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

@@ -23,6 +23,7 @@
             <!-- Check the chrome dev tools elements tab and notice that Angular automatically adds angular built-in classes like 'ng-touched' and 'ng-invalid' under the hood! -->
             <input
               required
+              ngNativeValidate
               name="username"
               ngModel
               type="text"
@@ -36,7 +37,9 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <!-- Note: Angulra has built-in angular directive 'email' attribute that's NgForm validator -->
+            <!-- Note: Add this ngNativeValidate Angular directive in order to automatically check for invalid state -->
             <input
+              ngNativeValidate
               email
               required
               name="thisIsInputEmail"
@@ -44,17 +47,31 @@
               type="email"
               id="email"
               class="form-control"
+              #email="ngModel"
             />
           </div>
+          <!-- Add a <p> modal message for invalid Modal -->
+          <!-- Must access the control and add a local reference to the <inpu> tag -->
+          <span class="help-block" *ngIf="!email.valid && email.touched"
+            >Plz enter a valid email!</span
+          >
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select ngModel name="secret" id="secret" class="form-control">
+          <select
+            ngModel
+            name="secret"
+            id="secret"
+            class="form-control"
+            ngNativeValidate
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">
+          Submit
+        </button>
       </form>
     </div>
   </div>
