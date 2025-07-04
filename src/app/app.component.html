@@ -9,7 +9,12 @@
       <!-- note: ngForm is a reserved word for Angular forms -->
       <!-- thus - instead of getting the template reference -->
       <!-- you're setting the template reference equal to the ngForm object exposed via the FormsModule -->
-      <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <!-- ngModelGroup is a directive used in Angular's template-driven forms. It allows you to logically group related form controls within a <form>. -->
+      <!-- Note: ngModelGroup only works inside a form with ngForm. -->
+      <!-- Each control inside the group must have a name attribute. -->
+      <!-- helpful for Validation: You can validate or reset a group of controls together. -->
+      <!-- Organization: Keeps your form model structured, especially for complex forms. -->
+      <form #form="ngForm" (ngSubmit)="onSubmit()" ngModelGroup="userData">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
