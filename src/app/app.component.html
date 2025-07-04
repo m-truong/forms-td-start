@@ -14,8 +14,8 @@
       <!-- Each control inside the group must have a name attribute. -->
       <!-- helpful for Validation: You can validate or reset a group of controls together. -->
       <!-- Organization: Keeps your form model structured, especially for complex forms. -->
-      <form #form="ngForm" (ngSubmit)="onSubmit()" ngModelGroup="userData">
-        <div id="user-data">
+      <form #form="ngForm" (ngSubmit)="onSubmit()" >
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
             <!-- Requires adding ngModel to ensure angular 'under-the-hood' detects that this <input> html tag is this current forms' control object -->
@@ -54,13 +54,14 @@
               class="form-control"
               #email="ngModel"
             />
+            <!-- Add a <p> modal message for invalid Modal -->
+            <!-- Must access the control and add a local reference to the <input> tag -->
+            <span class="help-block" *ngIf="!email.valid && email.touched">
+              Plz enter a valid email!
+            </span>
           </div>
-          <!-- Add a <p> modal message for invalid Modal -->
-          <!-- Must access the control and add a local reference to the <input> tag -->
-          <span class="help-block" *ngIf="!email.valid && email.touched">
-            Plz enter a valid email!
-          </span>
         </div>
+        <p *ngIf="!userData.valid">User Data is invalid! </p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
