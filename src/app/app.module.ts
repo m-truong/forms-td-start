@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// This is the FormsModule that angular sues
+// This is the FormsModule that angular uses
 // this import is required for the "Template-Driven" Forms approach...
 // it's the automatic inference of the form's object shape
 import { FormsModule } from '@angular/forms';
