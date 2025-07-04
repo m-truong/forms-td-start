@@ -12,7 +12,8 @@ export class AppComponent {
   // By storing the form template within the current Angular component ---> I'm essentially getting acces to the NgForm model even BEFORE submitting the form!
 
   // Added defaultValue field for the App component's 'Secret Question' form-control <select/> element tag
-  defaultValue = 'pet';
+  defaultValue = 'teacher';
+  answer = '';
 
   suggestUserName() {
     const suggestedName = 'Superuser';
