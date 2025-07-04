@@ -36,7 +36,7 @@
           </button>
           <div class="form-group">
             <label for="email">Mail</label>
-            <!-- Note: Angulra has built-in angular directive 'email' attribute that's NgForm validator -->
+            <!-- Note: Angular has built-in angular directive 'email' attribute that's NgForm validator -->
             <!-- Note: Add this ngNativeValidate Angular directive in order to automatically check for invalid state -->
             <input
               ngNativeValidate
@@ -59,7 +59,7 @@
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
-            ngModel
+            [ngModel]="defaultValue"
             name="secret"
             id="secret"
             class="form-control"
